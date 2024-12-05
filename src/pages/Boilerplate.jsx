@@ -41,7 +41,26 @@ export default function Boilerplate() {
                         </Button>
                     </Stack>
                     <Stack>
-                        <TextField sx={{}}>Abc</TextField>
+                        <TextField
+                            variant="outlined"
+                            sx={{
+                                transition: "all 0.2s ease-in-out",
+                                outline: "1px solid black",
+                                outlineOffset: "5px",
+                                borderRadius: "6px",
+                                "& .MuiOutlinedInput-notchedOutline": {
+                                    borderColor: "black_blue.main",
+                                    borderWidth: "1px",
+                                    borderRadius: "8px",
+                                    "& .Mui-focused": {
+                                        "& .MuiOutlinedInput-notchedOutline": {
+                                            borderColor: "white.main",
+                                            borderWidth: "3px",
+                                        },
+                                    },
+                                },
+                            }}
+                        />
                     </Stack>
                 </Stack>
             </Container>
