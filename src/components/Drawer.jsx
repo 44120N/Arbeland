@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Fragment } from 'react';
 import ReactDOM from 'react-dom';
-import { Box, Typography, List, ListItem, ListItemText } from '@mui/material';
+import { Box, Typography, List, ListItem, ListItemText, Divider, Stack } from '@mui/material';
 
 const Drawer = ({ list, title, active, setActive, color, bgcolor, bdcolor }) => {
     const [isVisible, setIsVisible] = useState(false);
@@ -24,18 +24,19 @@ const Drawer = ({ list, title, active, setActive, color, bgcolor, bdcolor }) => 
         <>
         <Box
             aria-modal="true"
+            button
             onClick={closeDrawer}
             sx={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100vw',
-            height: '100vh',
-            backgroundColor: 'rgba(0, 0, 0, 0.4)',
-            zIndex: 1300,
-            opacity: isVisible ? 1 : 0,
-            visibility: isVisible ? 'visible' : 'hidden',
-            transition: 'opacity 0.3s ease, visibility 0.3s ease',
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                width: '100vw',
+                height: '100vh',
+                backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                zIndex: 1300,
+                opacity: isVisible ? 1 : 0,
+                visibility: isVisible ? 'visible' : 'hidden',
+                transition: 'opacity 0.3s ease, visibility 0.3s ease',
             }}
         />
         
@@ -52,41 +53,37 @@ const Drawer = ({ list, title, active, setActive, color, bgcolor, bdcolor }) => 
                 zIndex: 1400,
                 transform: isVisible ? 'translateX(0)' : 'translateX(-100%)',
                 transition: 'transform 0.3s ease',
-                padding: '16px',
             }}
         >
-            <Typography
-                variant="h6"
-                sx={{
-                    fontWeight: 600,
-                    marginBottom: '16px',
-                    color: `${color}`,
-                    textAlign: 'center',
-                }}
-            >
-                {title}
-            </Typography>
+            <Stack sx={{ p:2 }}>
+                <Typography
+                    variant="h6"
+                    sx={{
+                        fontWeight: 600,
+                        color: `${color}`,
+                        textAlign: 'center',
+                    }}
+                >
+                    {title}
+                </Typography>
+            </Stack>
+            <Divider color={bdcolor}/>
 
-            <List>
+            <List disablePadding>
                 {list.map((item, index) => (
-                    <ListItem
-                        key={index}
-                        sx={{
-                            padding: '8px',
-                                borderBottom: `1px solid ${bdcolor}`,
-                            '&:last-child': {
-                                borderBottom: 'none',
-                            },
-                        }}
-                        button
-                        onClick={() => {
+                    <Fragment key={index}>
+                        <ListItem
+                            button
+                            onClick={() => {
                             item.onClick ? item.onClick() : closeDrawer();
-                        }}
-                        component={item.href ? 'a' : 'div'} // Dynamically set component as <a> for href
-                        href={item.href || undefined}
-                    >
-                        <ListItemText primary={item.label} sx={{ color: `${color}` }} />
-                    </ListItem>
+                            }}
+                            component={item.href ? 'a' : 'div'}
+                            href={item.href || undefined}
+                        >
+                            <ListItemText primary={item.label} sx={{ color: `${color}` }} />
+                        </ListItem>
+                        {index < list.length - 1 && <Divider sx={{ backgroundColor: bdcolor }} />}
+                    </Fragment>
                 ))}
             </List>
         </Box>

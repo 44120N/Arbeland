@@ -24,6 +24,7 @@ const Accordion = ({ question, answer, bgcolor_title, bgcolor_text, bdcolor, col
                 overflow: 'hidden',
                 boxShadow: `5px 5px 0px ${bdcolor}`,
                 mb: 2,
+                backgroundColor: `${bgcolor_title}`
             }}
         >
             <Button

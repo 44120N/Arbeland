@@ -1,24 +1,25 @@
 import { Button as MuiButton } from '@mui/material';
 
-const Button = ({ children, onClick, styleOverrides }) => {
+const Button = ({ children, onClick, sx, color, bgcolor, bdcolor }) => {
     return (
         <MuiButton
             onClick={onClick}
             variant="contained"
             disableElevation
             sx={{
+                minWidth: "0",
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                padding: '8px 16px',
+                padding: '2% 3%',
                 fontSize: '1rem',
                 fontWeight: 600,
-                backgroundColor: '#93c5fd',
-                color: '#ffffff',
+                backgroundColor: `${bgcolor}`,
+                color: `${color}`,
                 textTransform: 'none',
-                border: '2px solid black',
+                border: `2px solid ${bdcolor}`,
                 borderRadius: '8px',
-                boxShadow: '5px 5px 0px rgba(0,0,0,1)',
+                boxShadow: `5px 5px 0px ${bdcolor}`,
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
                 '&:hover': {
@@ -29,7 +30,7 @@ const Button = ({ children, onClick, styleOverrides }) => {
                 '&:active': {
                     transform: 'translate(2px, 2px)',
                 },
-                ...styleOverrides,
+                ...sx,
             }}
         >
             {children}
