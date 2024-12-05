@@ -32,6 +32,7 @@ export default function Dropdown({ items, children, color, bgcolor, bdcolor }) {
                     color: `${color}`,
                     border: `2px solid ${bdcolor}`,
                     boxShadow: `3px 3px 0px ${bdcolor}`,
+                    transition: "all 0.3s ease",
                     "&:hover": {
                         transform: "translate(3px, 3px)",
                         boxShadow: "none",
@@ -56,7 +57,7 @@ export default function Dropdown({ items, children, color, bgcolor, bdcolor }) {
                 onClose={handleClose}
                 MenuListProps={{
                     "aria-labelledby": "dropdown-button",
-                    "sx": "padding: 0"
+                    sx: "padding: 0",
                 }}
                 sx={{
                     mt: 1,
@@ -67,6 +68,9 @@ export default function Dropdown({ items, children, color, bgcolor, bdcolor }) {
                         minWidth: "160px",
                         minHeight: "0",
                         padding: 0,
+                    },
+                    "& :hover": {
+                        color: "primary.main",
                     },
                 }}
             >
@@ -85,7 +89,12 @@ export default function Dropdown({ items, children, color, bgcolor, bdcolor }) {
                         >
                             {item.name}
                         </MenuItem>
-                        {index < items.length - 1 && <Divider style={{margin: "0"}} sx={{ backgroundColor: bdcolor }}/>}
+                        {index < items.length - 1 && (
+                            <Divider
+                                style={{ margin: "0" }}
+                                sx={{ backgroundColor: bdcolor }}
+                            />
+                        )}
                     </Box>
                 ))}
             </Menu>
