@@ -5,7 +5,7 @@ import {
     getContrastRatio,
 } from "@mui/material";
 
-export default function ColorPallete(props) {
+export default function ColorPalette(props) {
     let black_blue = "#040720";
     let secondary = "#93c5fd";
     let tertiary = "#2075b8";
