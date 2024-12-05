@@ -1,10 +1,8 @@
-'use client'
-
 import React, { useState, useRef, useEffect } from 'react'
-import { Stack, Paper } from '@mui/material'
+import { Stack, Paper, Typography, Button } from '@mui/material'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-const Accordion = ({ question, answer }) => {
+const Accordion = ({ question, answer, bgcolor_title, bgcolor_text, bdcolor, color_title, color_text }) => {
     const [isOpen, setIsOpen] = useState(false)
     const [contentHeight, setContentHeight] = useState(0)
     const contentRef = useRef(null)
@@ -21,31 +19,31 @@ const Accordion = ({ question, answer }) => {
             sx={{
                 width: '100%',
                 maxWidth: 500,
-                border: '2px solid black',
+                border: `2px solid ${bdcolor}`,
                 borderRadius: '8px',
                 overflow: 'hidden',
-                backgroundColor: '#eaf3ff',
-                boxShadow: '5px 5px 0px rgba(0,0,0,1)',
+                boxShadow: `5px 5px 0px ${bdcolor}`,
                 mb: 2,
             }}
         >
-            <button
+            <Button
                 onClick={() => setIsOpen(!isOpen)}
                 style={{
+                    textTransform: 'capitalize',
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     width: '100%',
-                    padding: '16px',
+                    padding: '2% 3%',
                     fontSize: '1.1rem',
                     fontWeight: 600,
-                    backgroundColor: '#93c5fd',
+                    backgroundColor: `${bgcolor_title}`,
                     border: 'none',
                     outline: 'none',
                     cursor: 'pointer',
-                    borderBottom: '2px solid black',
+                    borderBottom: isOpen ? `2px solid ${bdcolor}`: "0px",
                     borderRadius: isOpen ? '0px': '8px',
-                    color: '#fff'
+                    color: `${color_title}`
                 }}
             >
                 {question}
@@ -57,18 +55,20 @@ const Accordion = ({ question, answer }) => {
                 >
                     <KeyboardArrowDownIcon/>
                 </Stack>
-            </button>
+            </Button>
             <Stack
                 ref={contentRef}
                 style={{
                 height: isOpen ? `${contentHeight}px` : '0',
                 overflow: 'hidden',
                 transition: 'height ease-in-out',
-                backgroundColor: '#ffffff',
+                backgroundColor: `${bgcolor_text}`,
                 padding: isOpen ? '16px' : '0 16px',
                 }}
             >
-                <p style={{ fontSize: '0.9rem', margin: 0 }}>{answer}</p>
+                <Typography variant='p' fontSize={'0.9rem'} margin={0} color={color_text}>
+                    {answer}
+                </Typography>
             </Stack>
         </Paper>
     )
