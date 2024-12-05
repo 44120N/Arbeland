@@ -19,20 +19,30 @@ export default function Landing() {
                         p: "15% 10%",
                     }}
                 >
-                    <Typography variant="h1">Learn beyond limits.</Typography>
-                    <Typography>
-                        Arbeland provides a comprehensive stream of knowledge
-                        that is easy to access, anytime, anywhere.
-                    </Typography>
-                    <Stack sx={{ alignItems: "end" }}>
-                        <Button
-                            color={"#fff"}
-                            bgcolor={"#93c5fd"}
-                            bdcolor={"#000"}
-                            sx={{ width: "8em", height: "3.5em", p: 2 }}
-                        >
-                            More Info
-                        </Button>
+                    <Stack
+                        sx={{
+                            outline: "3px solid black",
+                            outlineOffset: "5vw",
+                            borderRadius: "4px",
+                        }}
+                    >
+                        <Typography variant="h1">
+                            Learn beyond limits.
+                        </Typography>
+                        <Typography>
+                            Arbeland provides a comprehensive stream of
+                            knowledge that is easy to access, anytime, anywhere.
+                        </Typography>
+                        <Stack sx={{ alignItems: "end" }}>
+                            <Button
+                                color={"#fff"}
+                                bgcolor={"#93c5fd"}
+                                bdcolor={"#000"}
+                                sx={{ width: "8em", height: "3.5em", p: 2 }}
+                            >
+                                More Info
+                            </Button>
+                        </Stack>
                     </Stack>
                 </Stack>
             </Stack>
