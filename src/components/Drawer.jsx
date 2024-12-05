@@ -80,9 +80,10 @@ const Drawer = ({ list, title, active, setActive, color, bgcolor, bdcolor }) => 
                         }}
                         button
                         onClick={() => {
-                            closeDrawer();
-                            if (item.onClick) item.onClick();
+                            item.onClick ? item.onClick() : closeDrawer();
                         }}
+                        component={item.href ? 'a' : 'div'} // Dynamically set component as <a> for href
+                        href={item.href || undefined}
                     >
                         <ListItemText primary={item.label} sx={{ color: `${color}` }} />
                     </ListItem>

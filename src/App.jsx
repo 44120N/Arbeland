@@ -7,9 +7,9 @@ import Drawer from './components/Drawer';
 export default function App() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const menuItems = [
-    { label: 'Home', onClick: () => console.log('Home clicked') },
-    { label: 'About', onClick: () => console.log('About clicked') },
-    { label: 'Contact', onClick: () => console.log('Contact clicked') },
+    { label: 'Home', onClick: () => console.log('Home clicked'), href: '/#' },
+    { label: 'About', onClick: () => console.log('About clicked'), href: '/#' },
+    { label: 'Contact', onClick: () => console.log('Contact clicked'), href: '/#' },
   ];
   return (
     <Stack justifyContent={"center"} alignItems={"center"} direction={"column"}>
