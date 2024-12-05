@@ -43,7 +43,7 @@ const Accordion = ({ question, answer }) => {
                     border: 'none',
                     outline: 'none',
                     cursor: 'pointer',
-                    borderBottom: '2px solid black',
+                    borderBottom: isOpen ? '2px solid black': "0px",
                     borderRadius: isOpen ? '0px': '8px',
                     color: '#fff'
                 }}
