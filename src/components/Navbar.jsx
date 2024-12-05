@@ -53,7 +53,7 @@ const Navbar = () => {
                     color: "black_blue.main",
                 }}
             >
-                <Toolbar sx={{p:0}}>
+                <Toolbar>
                     <Button
                         color={'#000'}
                         bgcolor={"#fff"}

@@ -24,6 +24,7 @@ const Drawer = ({ list, title, active, setActive, color, bgcolor, bdcolor }) => 
         <>
         <Box
             aria-modal="true"
+            button
             onClick={closeDrawer}
             sx={{
                 position: 'fixed',
