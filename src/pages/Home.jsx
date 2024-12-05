@@ -40,18 +40,7 @@ export default function Home() {
                         question="What is Neobrutalism?"
                         answer="Neobrutalism is a design style characterized by bold colors, strong contrasts, and a minimalistic approach, often with a 'raw' aesthetic."
                     />
-                    <Button>Test</Button>
-                    <br />
-                    <Button onClick={() => setDrawerOpen(true)}>Sidebar</Button>
-                    <Drawer
-                        list={menuItems}
-                        title="Menu"
-                        active={drawerOpen}
-                        setActive={setDrawerOpen}
-                        bgcolor={"#93c5fd"}
-                        color={"#fff"}
-                        bdcolor={"#000"}
-                    />
+                    <Button color={'#fff'} bgcolor={'#93c5fd'} bdcolor={'#000'}>Test</Button>
                 </div>
             </Stack>
         </>
