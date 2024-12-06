@@ -81,6 +81,10 @@ export default function Dropdown({ items, children, color, bgcolor, bdcolor, sx 
                                 textDecoration: "none",
                                 color: `${color}`,
                                 backgroundColor: `${bgcolor}`,
+                                '&:hover':{
+                                    backgroundColor: `${color}`,
+                                    color: `${bgcolor}`,
+                                },
                             }}
                             onClick={handleClose}
                         >

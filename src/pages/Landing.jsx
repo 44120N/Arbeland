@@ -30,15 +30,15 @@ export default function Landing() {
                         gap={3}
                     >
                         <Stack direction={'column'} gap={1}>
-                            <Typography variant="h2" component={'h1'} fontSize={'5em'} color="primary">
-                                Learn beyond limits.
+                            <Typography variant="h2" textAlign={{xs: "center", sm: "left"}} component={'h1'} fontSize={'5em'} color="primary">
+                                Learn beyond limits
                             </Typography>
-                            <Typography variant="p" color="black_blue">
+                            <Typography variant="p" textAlign={{xs: "center", sm: "left"}} color="black_blue">
                                 Arbeland provides a comprehensive stream of
                                 knowledge that is easy to access, anytime, anywhere.
                             </Typography>
                         </Stack>
-                        <Stack sx={{ alignItems: "end" }}>
+                        <Stack sx={{ alignItems: { xs: "center", sm: "end"} }}>
                             <Button
                                 color={"#fff"}
                                 bgcolor={"primary.main"}

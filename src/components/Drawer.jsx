@@ -24,7 +24,6 @@ const Drawer = ({ list, title, active, setActive, color, bgcolor, bdcolor }) => 
         <>
         <Box
             aria-modal="true"
-            button
             onClick={closeDrawer}
             sx={{
                 position: 'fixed',
@@ -73,7 +72,6 @@ const Drawer = ({ list, title, active, setActive, color, bgcolor, bdcolor }) => 
                 {list.map((item, index) => (
                     <Fragment key={index}>
                         <ListItem
-                            button
                             onClick={() => {
                             item.onClick ? item.onClick() : closeDrawer();
                             }}
