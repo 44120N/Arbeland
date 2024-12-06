@@ -14,25 +14,30 @@ export default function Landing() {
                     sx={{
                         width: "100vw",
                         height: "100vh",
-                        bgcolor: "white.main",
                         display: "flex",
                         p: "15% 10%",
                     }}
+                    className="radialbg"
                 >
                     <Stack
                         sx={{
-                            outline: "3px solid black",
-                            outlineOffset: "5vw",
-                            borderRadius: "4px",
+                            border: "3px solid black",
+                            padding: "4% 5%",
+                            borderRadius: "32px",
+                            backgroundColor: "#fff",
                         }}
+                        direction={'column'}
+                        gap={3}
                     >
-                        <Typography variant="h1">
-                            Learn beyond limits.
-                        </Typography>
-                        <Typography>
-                            Arbeland provides a comprehensive stream of
-                            knowledge that is easy to access, anytime, anywhere.
-                        </Typography>
+                        <Stack direction={'column'} gap={1}>
+                            <Typography variant="h2" component={'h1'} fontSize={'5em'} color="primary">
+                                Learn beyond limits.
+                            </Typography>
+                            <Typography variant="p" color="black_blue">
+                                Arbeland provides a comprehensive stream of
+                                knowledge that is easy to access, anytime, anywhere.
+                            </Typography>
+                        </Stack>
                         <Stack sx={{ alignItems: "end" }}>
                             <Button
                                 color={"#fff"}
