@@ -5,7 +5,7 @@ import {
     Toolbar,
     Typography,
     Button as MuiButton,
-    Box,
+    Stack,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Dropdown from "./Dropdown";
@@ -33,6 +33,17 @@ const Navbar = () => {
         },
     ];
 
+    const forumDropdown = [
+        {
+            name: 'Mathematics',
+            link: '/#'
+        },
+        {
+            name: 'Informatics',
+            link: '/#'
+        },
+    ]
+
     return (
         <>
             <Drawer
@@ -40,7 +51,7 @@ const Navbar = () => {
                 title="Menu"
                 active={mobileOpen}
                 setActive={setMobileOpen}
-                bgcolor={"#93c5fd"}
+                bgcolor={"primary.main"}
                 color={"#fff"}
                 bdcolor={"#000"}
             />
@@ -51,13 +62,13 @@ const Navbar = () => {
                     boxShadow: "none",
                     borderBottom: "solid 3px",
                     borderColor: "black_blue.main",
-                    color: "white.main",
+                    color: "#fff",
                 }}
             >
                 <Toolbar>
                     <Button
-                        color={"#000"}
-                        bgcolor={"#fff"}
+                        color={"#fff"}
+                        bgcolor={"primary.main"}
                         bdcolor={"#000"}
                         onClick={() => setMobileOpen(true)}
                         sx={{
@@ -79,7 +90,7 @@ const Navbar = () => {
                         Arbeland
                     </Typography>
 
-                    <Box sx={{ display: { xs: "none", sm: "block" } }}>
+                    <Stack sx={{ display: { xs: "none", sm: "flex" } }} direction={'row'} gap={2}>
                         <MuiButton
                             color="inherit"
                             component={Link}
@@ -96,14 +107,13 @@ const Navbar = () => {
                         >
                             About
                         </MuiButton>
-                        <MuiButton
-                            color="inherit"
-                            component={Link}
-                            sx={{ textTransform: "capitalize" }}
-                            to="/forum"
+                        <Dropdown 
+                            bgcolor={'primary.main'} color={'#fff'} bdcolor={'secondary.main'} 
+                            items={forumDropdown} 
+                            sx={{boxShadow: "none", "&:hover":{}, "transition":"none", minWidth: 0}}
                         >
                             Forum
-                        </MuiButton>
+                        </Dropdown>
                         <MuiButton
                             color="inherit"
                             component={Link}
@@ -112,7 +122,7 @@ const Navbar = () => {
                         >
                             Login
                         </MuiButton>
-                    </Box>
+                    </Stack>
                 </Toolbar>
             </AppBar>
             <Outlet />

@@ -41,7 +41,7 @@ export default function Landing() {
                         <Stack sx={{ alignItems: "end" }}>
                             <Button
                                 color={"#fff"}
-                                bgcolor={"#93c5fd"}
+                                bgcolor={"primary.main"}
                                 bdcolor={"#000"}
                                 sx={{ width: "8em", height: "3.5em", p: 2 }}
                             >

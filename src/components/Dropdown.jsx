@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Menu, MenuItem, Button, Box, Divider } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-export default function Dropdown({ items, children, color, bgcolor, bdcolor }) {
+export default function Dropdown({ items, children, color, bgcolor, bdcolor, sx }) {
     const [anchorEl, setAnchorEl] = useState(null);
     const isActiveDropdown = Boolean(anchorEl);
 
@@ -17,7 +17,6 @@ export default function Dropdown({ items, children, color, bgcolor, bdcolor }) {
     return (
         <Box sx={{ display: "inline-block", position: "relative" }}>
             <Button
-                variant="contained"
                 onClick={handleClick}
                 sx={{
                     display: "flex",
@@ -37,6 +36,7 @@ export default function Dropdown({ items, children, color, bgcolor, bdcolor }) {
                         transform: "translate(3px, 3px)",
                         boxShadow: "none",
                     },
+                    ...sx,
                 }}
                 endIcon={
                     <KeyboardArrowDownIcon
@@ -68,9 +68,6 @@ export default function Dropdown({ items, children, color, bgcolor, bdcolor }) {
                         minWidth: "160px",
                         minHeight: "0",
                         padding: 0,
-                    },
-                    "& :hover": {
-                        color: "primary.main",
                     },
                 }}
             >
