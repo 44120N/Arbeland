@@ -1,6 +1,6 @@
-import { Stack, Typography, Container, Button, TextField } from "@mui/material";
+import { Stack, Typography, Container, TextField } from "@mui/material";
 import ColorPallete from "../components/ColorPalette";
-
+import Button from "../components/Button";
 export default function Boilerplate() {
     return (
         <>
@@ -17,28 +17,76 @@ export default function Boilerplate() {
                             lorem ipsum dolor sit amet
                         </Typography>
                     </Stack>
-                    <Stack>
+                    <Stack gap={1}>
                         <Button
-                            sx={{ bgcolor: "black_blue.main" }}
+                            bgcolor="black_blue.main"
+                            bdcolor="#000"
                             color="white"
                         >
                             "black_blue" #040720
                         </Button>
-                        <Button sx={{ bgcolor: "primary.main" }} color="white">
-                            "MUI_Primary" primary.main
+                        <Button
+                            bgcolor={"primary.main"}
+                            bdcolor={"#000"}
+                            color="white"
+                        >
+                            "primary.main" primary.main
                         </Button>
                         <Button
-                            sx={{ bgcolor: "secondary.main" }}
+                            bgcolor="secondary.main"
+                            bdcolor={"#000"}
                             color="primary"
                         >
-                            "Aaron_Blue" #93c5fd
+                            "secondary.main" #93c5fd
                         </Button>
-                        <Button sx={{ bgcolor: "tertiary.main" }} color="white">
-                            "Arbeland_Blue" #2075b8
+                        <Button
+                            bgcolor="tertiary.main"
+                            bdcolor={"#000"}
+                            color="white"
+                        >
+                            "tertiary.main" #2075b8
                         </Button>
-                        <Button sx={{ bgcolor: "white.main" }} color="primary">
-                            "Chrome_Blue" #c9dcfa
+                        <Button
+                            bgcolor="white.main"
+                            bdcolor={"#000"}
+                            color="primary"
+                        >
+                            "white.main" #c9dcfa
                         </Button>
+                        <Stack direction={"row"} gap={1}>
+                            <Button
+                                bgcolor={"#fff"}
+                                color="#000"
+                                bdcolor={"#000"}
+                                sx={{ width: "3.5em" }}
+                            >
+                                A
+                            </Button>
+                            <Button
+                                bgcolor={"#fff"}
+                                color="#000"
+                                bdcolor={"#000"}
+                                sx={{ width: "3.5em" }}
+                            >
+                                A
+                            </Button>
+                            <Button
+                                bgcolor={"#fff"}
+                                color="#000"
+                                bdcolor={"#000"}
+                                sx={{ width: "3.5em" }}
+                            >
+                                A
+                            </Button>
+                            <Button
+                                bgcolor={"#fff"}
+                                color="#000"
+                                bdcolor={"#000"}
+                                sx={{ width: "3.5em" }}
+                            >
+                                A
+                            </Button>
+                        </Stack>
                     </Stack>
                     <Stack>
                         <TextField

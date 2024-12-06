@@ -8,6 +8,7 @@ import {
     Box,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import Dropdown from "./Dropdown";
 import { Link, Outlet } from "react-router-dom";
 import Drawer from "./Drawer";
 
@@ -46,20 +47,23 @@ const Navbar = () => {
             <AppBar
                 position="sticky"
                 sx={{
-                    backgroundColor: "transparent",
+                    backgroundColor: "primary.main",
                     boxShadow: "none",
                     borderBottom: "solid 3px",
                     borderColor: "black_blue.main",
-                    color: "black_blue.main",
+                    color: "white.main",
                 }}
             >
                 <Toolbar>
                     <Button
-                        color={'#000'}
+                        color={"#000"}
                         bgcolor={"#fff"}
                         bdcolor={"#000"}
                         onClick={() => setMobileOpen(true)}
-                        sx={{ display: { xs: "flex", sm: "none" }, padding: "1%" }}
+                        sx={{
+                            display: { xs: "flex", sm: "none" },
+                            padding: "1%",
+                        }}
                     >
                         <MenuIcon />
                     </Button>
@@ -76,16 +80,36 @@ const Navbar = () => {
                     </Typography>
 
                     <Box sx={{ display: { xs: "none", sm: "block" } }}>
-                        <MuiButton color="inherit" component={Link} to="/">
+                        <MuiButton
+                            color="inherit"
+                            component={Link}
+                            to="/"
+                            sx={{ textTransform: "capitalize" }}
+                        >
                             Home
                         </MuiButton>
-                        <MuiButton color="inherit" component={Link} to="/about">
+                        <MuiButton
+                            color="inherit"
+                            component={Link}
+                            sx={{ textTransform: "capitalize" }}
+                            to="/about"
+                        >
                             About
                         </MuiButton>
-                        <MuiButton color="inherit" component={Link} to="/forum">
+                        <MuiButton
+                            color="inherit"
+                            component={Link}
+                            sx={{ textTransform: "capitalize" }}
+                            to="/forum"
+                        >
                             Forum
                         </MuiButton>
-                        <MuiButton color="inherit" component={Link} to="/login">
+                        <MuiButton
+                            color="inherit"
+                            component={Link}
+                            sx={{ textTransform: "capitalize" }}
+                            to="/login"
+                        >
                             Login
                         </MuiButton>
                     </Box>
