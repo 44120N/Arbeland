@@ -35,14 +35,14 @@ const Navbar = () => {
 
     const forumDropdown = [
         {
-            name: 'Mathematics',
-            link: '/#'
+            name: "Mathematics",
+            link: "/#",
         },
         {
-            name: 'Informatics',
-            link: '/#'
+            name: "Informatics",
+            link: "/#",
         },
-    ]
+    ];
 
     return (
         <>
@@ -78,7 +78,6 @@ const Navbar = () => {
                     >
                         <MenuIcon />
                     </Button>
-
                     <Typography
                         variant="h6"
                         component="div"
@@ -90,11 +89,15 @@ const Navbar = () => {
                         Arbeland
                     </Typography>
 
-                    <Stack sx={{ display: { xs: "none", sm: "flex" } }} direction={'row'} gap={2}>
+                    <Stack
+                        sx={{ display: { xs: "none", sm: "flex" } }}
+                        direction={"row"}
+                        gap={2}
+                    >
                         <MuiButton
                             color="inherit"
                             component={Link}
-                            to="/"
+                            to="./"
                             sx={{ textTransform: "capitalize" }}
                         >
                             Home
@@ -103,16 +106,23 @@ const Navbar = () => {
                             color="inherit"
                             component={Link}
                             sx={{ textTransform: "capitalize" }}
-                            to="/about"
+                            to="./about"
                         >
                             About
                         </MuiButton>
-                        <Dropdown 
-                            bgcolor={'primary.main'} color={'#fff'} bdcolor={'secondary.main'} 
-                            items={forumDropdown} 
-                            sx={{boxShadow: "none", "&:hover":{}, "transition":"none", minWidth: 0}}
+                        <Dropdown
+                            bgcolor={"primary.main"}
+                            color={"#fff"}
+                            bdcolor={"secondary.main"}
+                            items={forumDropdown}
+                            sx={{
+                                boxShadow: "none",
+                                "&:hover": {},
+                                transition: "none",
+                                minWidth: 0,
+                            }}
                         >
-                            Forum
+                            Study
                         </Dropdown>
                         <MuiButton
                             color="inherit"
@@ -123,6 +133,16 @@ const Navbar = () => {
                             Login
                         </MuiButton>
                     </Stack>
+                    {/* <Stack>
+                        <Button
+                            bgcolor={"#fff"}
+                            color="#000"
+                            bdcolor={"#000"}
+                            sx={{ padding:"0.3em" }}
+                        >
+                            abcd
+                        </Button>
+                    </Stack> */}
                 </Toolbar>
             </AppBar>
             <Outlet />

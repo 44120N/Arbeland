@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import Boilerplate from "./pages/Boilerplate.jsx";
-import Landing from "./pages/Landing.jsx";
+import About from "./pages/About.jsx";
 import App from "./App.jsx";
 import "./index.css";
 
@@ -19,8 +19,8 @@ const router = createBrowserRouter([
                 element: <Boilerplate />,
             },
             {
-                path: "landing",
-                element: <Landing />,
+                path: "about",
+                element: <About />,
             },
         ],
     },

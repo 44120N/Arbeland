@@ -1,7 +1,15 @@
 import { Stack, Typography, Container, TextField } from "@mui/material";
+import Accordion from "../components/Accordion";
+import Dropdown from "../components/Dropdown";
 import ColorPallete from "../components/ColorPalette";
 import Button from "../components/Button";
 export default function Boilerplate() {
+    // items for the dropdown
+    const items = [
+        { name: "Youtube", link: "https://www.youtube.com" },
+        { name: "Facebook", link: "https://www.facebook.com" },
+        { name: "Google", link: "https://www.google.com" },
+    ];
     return (
         <>
             <Container size="xl">
@@ -110,6 +118,34 @@ export default function Boilerplate() {
                             }}
                         />
                     </Stack>
+                    <Stack>
+                        <Accordion
+                            bgcolor_title={"#93c5fd"}
+                            color_title={"#fff"}
+                            bgcolor_text={"#fff"}
+                            color_text={"#000"}
+                            bdcolor={"#000"}
+                            question="What is Neobrutalism?"
+                            answer="Neobrutalism is a design style characterized by bold colors, strong contrasts, and a minimalistic approach, often with a 'raw' aesthetic."
+                        />
+                    </Stack>
+                    <Stack>
+                        <Dropdown
+                            items={items}
+                            color={"#fff"}
+                            bgcolor={"#93c5fd"}
+                            bdcolor={"#000"}
+                        >
+                            Social
+                        </Dropdown>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </Stack>
+                    <Stack>as</Stack>
                 </Stack>
             </Container>
         </>
